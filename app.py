@@ -24,7 +24,7 @@ st.header("1. What people pay")
 st.plotly_chart(px.bar(prices, x="Service", y="USD", color="Type", text="USD"), use_container_width=True)
 
 st.header("2. Who can connect")
-st.plotly_chart(px.funnel(devices, x="Household %", y="Device"), use_container_width=True)
+st.plotly_chart(px.funnel(devices, x="Household %", y="Device").update_traces(texttemplate="%{x}%"), use_container_width=True)
 
 st.header("3. Tax burden")
 pkg = st.slider("Monthly package (USD)", 1, 100, 15)
